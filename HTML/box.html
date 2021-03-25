@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .one {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+        }
+
+        .one > div, .two > div {
+            width: 125px;
+            height: 125px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            background-color: goldenrod;
+            float: left;
+            text-align: center;
+            line-height: 98px;
+        }
+
+        .two {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 600px;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="one">
+    <div draggable="true">precise：精准</div>
+    <div draggable="true">intolerant：包容</div>
+    <div draggable="true">everbear：专横</div>
+    <div draggable="true">aggressive：侵略</div>
+    <div draggable="true">reliant:依赖</div>
+    <div draggable="true">stubborn：顽固</div>
+    <div draggable="true">ignite：激发</div>
+    <div draggable="true">plodding:单调</div>
+</div>
+<div class="two"></div>
+
+<script>
+    var boxs = document.querySelectorAll('.one div');
+    //        临时的盒子 用于存放当前拖拽的元素
+
+    var two = document.querySelector('.two');
+
+    var temp = null;
+    //         给8个小盒子分别绑定拖拽事件
+    for (var i = 0; i < boxs.length; i++) {
+        boxs[i].ondragstart = function () {
+//                保持当前拖拽的元素
+            temp = this;
+            console.log(temp);
+        }
+
+        boxs[i].ondragend = function () {
+//               当拖拽结束 ，清空temp
+            temp = null;
+            console.log(temp);
+        }
+    }
+
+    //        目标元素的拖拽事件
+    two.ondragover = function (e) {
+//            阻止拖拽的默认行为
+        e.preventDefault();
+    }
+    //        当在目标元素上松开鼠标是触发
+    two.ondrop = function () {
+//            将拖拽的元素追加到 two里面来
+        this.appendChild(temp);
+    }
+</script>
+</body>
+</html>
