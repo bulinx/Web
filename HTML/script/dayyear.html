@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>惊喜</title>
+    </head>
+    <body>
+        <script>
+           console.log(formatDate());
+
+/*
+    方法：日期格式化。
+    格式要求：今年是：2020年02月02日 08:57:09 星期日
+*/
+function formatDate() {
+    var date = new Date();
+
+    var year = date.getFullYear(); // 年
+    var month = date.getMonth() + 1; // 月
+    var day = date.getDate(); // 日
+
+    var week = date.getDay(); // 星期几
+    var weekArr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+
+    var hour = date.getHours(); // 时
+    hour = hour < 10 ? '0' + hour : hour; // 如果只有一位，则前面补零
+
+    var minute = date.getMinutes(); // 分
+    minute = minute < 10 ? '0' + minute : minute; // 如果只有一位，则前面补零
+
+    var second = date.getSeconds(); // 秒
+    second = second < 10 ? '0' + second : second; // 如果只有一位，则前面补零
+
+    var result = '今天是：' + year + '年' + month + '月' + day + '日 ' + hour + ':' + minute + ':' + second + ' ' + weekArr[week];
+
+    return result;
+}
+         
+        </script>
+    </body>
+</html>

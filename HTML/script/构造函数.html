@@ -1,0 +1,31 @@
+<!DOCTYPE html>>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>worksday</title>
+    </head>
+    <body>
+        <script>
+           // 创建一个构造函数，专门用来创建Person对象
+// 创建一个构造函数，专门用来创建Person对象
+function Person(name, age, gender) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.sayName = function () {
+        alert(this.name);
+    };
+}
+
+var per = new Person('孙悟空', 18, '男');
+var per2 = new Person('玉兔精', 16, '女');
+var per3 = new Person('奔波霸', 38, '男');
+
+// 创建一个构造函数，专门用来创建 Dog 对象
+function Dog() {}
+
+var dog = new Dog();
+        </script>
+    </body>
+</html>

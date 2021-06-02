@@ -1,0 +1,39 @@
+let retCode = 1003; // 返回码 retCode 的值可能有很多种情况
+
+switch (retCode) {
+    case 0:
+        alert('接口联调成功');
+        break;
+    case 101:
+        alert('活动不存在');
+        break;
+
+    case 103:
+        alert('活动未开始');
+        break;
+
+    case 104:
+        alert('活动已结束');
+        break;
+
+    case 1001:
+        alert('参数错误');
+        break;
+
+    case 1002:
+        alert('接口频率限制');
+        break;
+
+    case 1003:
+        alert('未登录');
+        break;
+
+    case 1004:
+        alert('（风控用户）提示 活动太火爆啦~军万马都在挤，请稍后再试');
+        break;
+
+    // 其他异常返回码
+    default:
+        alert('系统君失联了，请稍候再试');
+        break;
+}

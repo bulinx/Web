@@ -9,6 +9,29 @@
     <meta name="Description" content="小黄人住你家旁边。" />
     <!--meta http-equiv="refresh" content="3;http://www.baidu.com"-->
     <title>table</title>
+    <style type="text/css">
+
+        /*整个表格的样式*/
+          table{
+            width: 300px;
+            height: 200px;
+            border: 1px solid blue;
+            /*border-collapse属性：对表格的线进行折叠*/
+            border-collapse: collapse;
+          }
+    
+        /*鼠标悬停时，让当前行显示#868686这种灰色*/
+          table tr:hover{
+              background: #868686;
+          }
+    
+        /*每个单元格的样式*/
+          table td{
+              border:1px solid red;
+              text-align: center
+          }
+    
+      </style>
 </head>
 <body>
     <table border="1">
@@ -22,6 +45,7 @@
         </tfoot>
        
     </table>
+   
 </body>
 
 </html>

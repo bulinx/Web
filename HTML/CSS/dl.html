@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="Author" content="">
+    <meta name="Keywords" content="启动超级变换形态"" />
+    <meta name="Description" content="小黄人住你家旁边。" />
+    <!--meta http-equiv="refresh" content="3;http://www.baidu.com"-->
+    <title>dl</title>
+    <style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.nav{
+			width: 960px;
+			height: 50px;
+			border: 1px solid red;
+			margin: 100px auto;
+		}
+		.nav ul{
+			/*去掉小圆点*/
+			list-style: none;
+		}
+		.nav ul li{
+			float: left;
+			width: 120px;
+			height: 50px;
+			/*让内容水平居中*/
+			text-align: center;
+			/*让行高等于nav的高度，就可以保证内容垂直居中*/
+			line-height: 50px;
+		}
+		.nav ul li a{
+			display: block;
+			width: 120px;
+			height: 50px;
+		}
+		/*两个伪类的属性，可以用逗号隔开*/
+		.nav ul li a:link , .nav ul li a:visited{
+			text-decoration: none;
+			background-color: purple;
+			color:white;
+		}
+		.nav ul li a:hover{
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+   
+    <dl>
+        <dt>嘻嘻嘻嘻</dt>
+        <dd>
+            <a href="#">购物流程</a>
+            <a href="#">会员介绍</a>
+            <a href="#">生活旅行/团购</a>
+            <a href="#">常见问题</a>
+            <a href="#">大家电</a>
+            <a href="#">联系客服</a>
+        </dd>
+	</dl>
+	<div class="nav">
+		<ul>
+			<li><a href="#">网站栏目</a></li>
+			<li><a href="#">网站栏目</a></li>
+			<li><a href="#">网站栏目</a></li>
+			<li><a href="#">网站栏目</a></li>
+			<li><a href="#">网站栏目</a></li>
+			<li><a href="#">网站栏目</a></li>
+			<li><a href="#">网站栏目</a></li>
+			<li><a href="#">网站栏目</a></li>
+		</ul>
+	</div>
+    
+</body>
+
+</html>
