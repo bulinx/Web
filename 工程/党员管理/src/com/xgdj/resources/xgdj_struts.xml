@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="xgdj" extends="base" namespace="/">
+		<!-- 基础数据-->
+		<action name="foundation" class="com.xgdj.action.FoundationAction">
+			<result name="success">xgdj/foundation/xgdj-foundation-list.jsp</result>
+			<result name="insertInfo">xgdj/foundation/xgdj-foundation-add.jsp</result>
+			<result name="viewInfo">xgdj/foundation/foundation-user-show.jsp</result>
+			<result name="update" type="redirectAction">
+				<param name="actionName">foundation</param>
+				<param name="method">myInfo</param>
+			</result>
+			<result name="findForID">xgdj/foundation/xgdj-foundation-add.jsp</result>
+		</action>
+		<!-- 入党申请 -->
+		<action name="partyApply" class="com.xgdj.action.PartyApplyAction">
+			<result name="success">xgdj/partyApply/xgdj-party.jsp</result>
+			<result name="findByNum">xgdj/partyApply/xgdj-apply-add.jsp</result>
+			<result name="save" type="redirect">partyApply</result>
+			<result name="searchApply">xgdj/partyApply/xgdj-apply-list.jsp</result>
+			<result name="viewAll">xgdj/partyApply/xgdj-apply-all-list.jsp</result>
+			<result name="findParty">xgdj/partyApply/xgdj-apply-update.jsp</result>
+			<result name="findPartyData">xgdj/partyApply/xgdj-party-show.jsp</result>
+		</action>
+		<!-- 站内信 -->
+		<action name="msg" class="com.xgdj.action.MessageAction">
+			<result name="success">xgdj/msg/xgdj-msg-list.jsp</result>
+		</action>
+		<!-- 入党流程 -->
+		<action name="process" class="com.xgdj.action.ProcessAction">
+			<result name="success">xgdj/process/xgdj-process-list.jsp</result>
+		</action>
+		<!-- 积极分子申请 -->
+		<action name="positive" class="com.xgdj.action.PositiveAction">
+			<result name="findByNum">xgdj/positive/xgdj-positive-add.jsp</result>
+			<result name="update" type="redirect">partyApply</result>
+			<result name="searchPositive">xgdj/positive/xgdj-positive-list.jsp</result>
+		</action>
+		<!-- 拟发展申请 -->
+		<action name="develop" class="com.xgdj.action.DevelopAction">
+			<result name="findByNum">xgdj/develop/xgdj-develop-add.jsp</result>
+			<result name="update" type="redirect">partyApply</result>
+			<result name="searchDevelop">xgdj/develop/xgdj-develop-list.jsp</result>
+		</action>
+		<!-- 发展申请 -->
+		<action name="prepare" class="com.xgdj.action.PrepareAction">
+			<result name="findByNum">xgdj/prepare/xgdj-prep-add.jsp</result>
+			<result name="update" type="redirect">partyApply</result>
+			<result name="searchPrepare">xgdj/prepare/xgdj-prep-list.jsp</result>
+		</action>
+		<!-- 转正申请 -->
+		<action name="normal" class="com.xgdj.action.NormalAction">
+			<result name="findByNum">xgdj/normal/xgdj-normal-add.jsp</result>
+			<result name="update" type="redirect">partyApply</result>
+			<result name="searchNormal">xgdj/normal/xgdj-normal-list.jsp</result>
+		</action>
+		<!-- 思想汇报 -->
+		<action name="report" class="com.xgdj.action.ReportAction">
+			<result name="success">xgdj/report/xgdj-report-list.jsp</result>
+			<result name="findByNum">xgdj/report/xgdj-report-num-list.jsp</result>
+		</action>
+		<!-- 图标分析 -->
+		<action name="xchart" class="com.xgdj.action.ChartAction"></action>
+	</package>
+</struts>

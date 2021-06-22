@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.framework.po.OperateLog" table="tb_operate_log">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="operateBy" type="string" column="operateBy"/>
+		<property name="keywords" type="string" column="keywords"/>
+		<property name="operateTime" type="java.sql.Timestamp" column="operateTime"/>
+		<property name="content" type="string" column="content"/>
+		<property name="flag" type="java.lang.Byte" column="flag"/>
+	</class>
+</hibernate-mapping>

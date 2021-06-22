@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.framework.po.Infomation" table="tb_info">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="title" type="string" column="title" length="40" />
+		<property name="publishTime" type="java.sql.Timestamp" column="publishTime"/>
+		<property name="publishMan" type="string" column="publishMan" length="20" />
+		<property name="source" type="string" column="source" length="40" />
+		<property name="summary" type="string" column="summary" length="200" />
+		<property name="picPath" type="string" column="picPath" length="200" />
+		<property name="viewCount" type="java.lang.Integer" column="viewCount" length="11" />
+		<property name="commentCount" type="java.lang.Integer" column="commentCount" length="11" />
+		<property name="content" type="string" column="content" />
+		<property name="statue" type="java.lang.Byte" column="statue" length="1" />
+		<property name="type" type="java.lang.Byte" column="type" length="1" />
+		<property name="flag" type="java.lang.Byte" column="flag" length="1" />
+	</class>
+</hibernate-mapping>

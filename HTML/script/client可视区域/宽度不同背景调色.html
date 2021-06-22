@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+
+    <script src="可视区域封装.js"></script>
+    <script>
+        //需求：浏览器每次更改大小，判断是否符合某一标准然后给背景上色。
+    //  // >960红色，大于640小于960蓝色，小于640绿色。
+
+    window.onresize = fn;//页面大小发生变化时，执行该函数。
+    //页面加载的时候直接执行一次函数，确定浏览器可视区域的宽，给背景上色
+    fn();
+
+    //封装成函数，然后指定的时候去调用和绑定函数名
+    function fn(){
+        if(client().width > 960){
+            document.body.style.backgroundColor = "red";
+
+        }
+        else if(client().width > 640){
+            document.body.style.backgroundColor = "green";
+
+        }
+        else {
+            document.body.style.backgroundColor = "orange";
+
+        }
+    }
+    </script>
+</body>
+</html>

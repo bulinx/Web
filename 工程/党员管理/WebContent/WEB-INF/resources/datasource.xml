@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasourceManager xmlVersion="20151125" releaseVersion="7.1.0">
+<ConnectionMap>
+<Connection name="JDBC1" class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="jdbc:mysql://123.207.245.192:3306/xgdj" driver="com.mysql.jdbc.Driver" user="root" password="___00790026006e006a000b00b1004600730078000a0040004a0031008600130025002400780039003a005500e5" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</ConnectionMap>
+</DatasourceManager>

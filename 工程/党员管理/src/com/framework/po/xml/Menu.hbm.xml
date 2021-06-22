@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.framework.po.Menu" table="tb_menu">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id> 
+		<property name="name" type="string" column="name"/>
+		<property name="icon" type="string" column="icon"/>
+		<property name="codes" type="java.lang.Integer" column="codes"/>
+		<property name="url" type="string" column="url"/>
+		<property name="content" type="string" column="content"/>
+		<property name="open" type="java.lang.Boolean" column="open"/>
+		<property name="isParent" type="java.lang.Boolean" column="isParent"/>
+		<property name="state" type="java.lang.Byte" column="state"/>
+		<property name="flag" type="java.lang.Byte" column="flag"/>
+		<property name="orderNum" type="java.lang.Integer" column="orderNum"/>
+	</class>
+</hibernate-mapping>

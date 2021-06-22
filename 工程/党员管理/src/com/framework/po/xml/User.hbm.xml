@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.framework.po.User" table="tb_user">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name" type="string" column="name"/>
+		<property name="pass" type="string" column="pass"/>
+		<property name="state" type="java.lang.Byte" column="state" />
+		<property name="createTime" type="java.sql.Timestamp" column="createTime"/>
+		<property name="flag" type="java.lang.Byte" column="flag"/>
+		<many-to-one name="role" column="author" class="com.framework.po.Role" 
+		lazy="false" fetch="join"></many-to-one>
+		<!-- 继承关系 -->
+		<joined-subclass name="com.xgdj.po.Foundation" table="tb_xg_foundation">
+			<key column="id"/>
+            <property name="number" type="string" column="number"/><!--学号-->
+			<property name="realName" type="string" column="realName"/><!--姓名-->
+			<property name="birthday" type="string" column="birthday"/><!--出生日期-->
+			<property name="sex" type="string" column="sex"/><!--性别-->
+			<property name="idCard" type="string" column="idCard"/><!--身份号-->
+			<property name="source" type="string" column="source"/><!--生源地-->
+			<property name="nation" type="string" column="nation"/><!--籍贯-->
+			<property name="address" type="string" column="address"/><!--通信地址-->
+			<property name="ticket" type="string" column="ticket"/><!--高考准考证号-->
+			<property name="identity" type="string" column="identity"/><!--政治面貌-->
+			<property name="admission" type="string" column="admission"/><!--入学时间-->
+			<property name="dormitory" type="string" column="dormitory"/><!--宿舍号-->
+			<property name="phone" type="string" column="phone"/><!--手机号-->
+			<property name="email" type="string" column="email"/><!--邮箱-->
+			<property name="qq" type="string" column="qq"/><!--QQ号-->
+			<property name="operateTime" type="string" column="operateTime"/><!--操作时间-->
+			<property name="classes" type="string" column="classes"/><!--班级-->
+			<property name="schoolYear" type="string" column="schoolYear"/><!--入学年份-->
+        </joined-subclass>
+	</class>
+</hibernate-mapping>

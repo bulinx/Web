@@ -1,0 +1,61 @@
+<!DOCTYPE html>>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel = "stylesheet" type = "text/css" href = "../CSS/a.css"></link>
+        <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            cursor: pointer;
+        }
+        </style>
+       
+        <title>things</title>
+    </head>
+    <body>
+        <!--
+      <div id="box1"></div>
+        <script type="text/javascript">
+        //have things occour source
+        var div = document.getElementById("box1");
+        //tightly connected with the things
+        div.onclick = function(){
+            // writing the Device Driver
+            alert("I'm the content that pops up");
+        }
+        -->
+  
+       <!--
+<div id="box1"></div>
+
+<script type="text/javascript">
+    // 1、获取事件源
+    var div = document.getElementById("box1");
+    // 2、绑定事件
+    div.onclick = function () {
+        // 3、书写事件驱动程序
+        alert("我是弹出的内容");
+    }
+        </script>
+
+       -->   
+        <!--行内绑定-->
+<div id="box1" onclick="fn()"></div>
+
+<script type="text/javascript">
+    var div1 = document.getElementById("box1");
+
+    function fn() {
+        div1.style.width = "200px";   //属性值要写引号
+        div1.style.height = "200px";
+        div1.style.backgroundColor = "red";   //属性名是backgroundColor，不是background-color
+        alert("我是弹出的内容");
+    }
+
+</script>
+    </body>
+</html>

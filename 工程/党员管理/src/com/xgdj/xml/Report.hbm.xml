@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xgdj.po.Report" table="tb_xg_report">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id> 
+		<property name="numbers" type="string" column="numbers"/><!--学号-->
+		<property name="name" type="string" column="name"/><!--姓名-->
+		<property name="linkMan1" type="string" column="linkMan1"/><!--第一联系人-->
+		<property name="linkMan2" type="string" column="linkMan2"/><!--第二联系人-->
+		<property name="createTime" type="string" column="createTime"/><!--审核时间-->
+		<property name="operateMan" type="string" column="operateMan"/><!--审核人-->
+	</class>
+</hibernate-mapping>

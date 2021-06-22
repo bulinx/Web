@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xgdj.po.PartyData" table="tb_xg_apply">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id> 
+		<property name="state" type="java.lang.Integer" column="state"/><!--用户状态（0-有效，1-无效）-->
+		<property name="number" type="string" column="number"/><!--学号-->
+		<property name="name" type="string" column="name"/><!--姓名-->
+		<property name="company" type="string" column="company"/><!--单位-->
+		<property name="idCard" type="string" column="idCard"/><!--身份证号-->
+		<property name="sex" type="string" column="sex"/><!--性别-->
+		<property name="nation" type="string" column="nation"/><!--民族-->
+		<property name="birthday" type="string" column="birthday"/><!--出生日期-->
+		<property name="culture" type="string" column="culture"/><!--文化程度-->
+		<property name="job" type="string" column="job"/><!--职业-->
+		<property name="partyDate" type="string" column="partyDate"/><!--申请入党时间-->
+		<property name="viewDate" type="string" column="viewDate"/><!--列入考察时间-->
+		<property name="partySchool" type="string" column="partySchool"/><!--是否党校毕业-->
+		<property name="youth" type="string" column="youth"/><!--是否团员-->
+		<property name="createTime" type="java.sql.Timestamp" column="createTime"/><!--操作时间-->
+		<!-- 积极分子 -->
+		<property name="degree" type="string" column="degree"/><!--学位或职称-->
+		<property name="duty" type="string" column="duty"/><!--单位职务或职业-->
+		<property name="positiveDate" type="string" column="positiveDate"/><!--列为积极分子时间-->
+		<property name="positivePublic" type="string" column="positivePublic"/><!--公示起止时间-->
+		<property name="promote" type="string" column="promote"/><!--推荐或推优方式-->
+		<property name="linkMan1" type="string" column="linkMan1"/><!--第一联系人-->
+		<property name="linkMan2" type="string" column="linkMan2"/><!--第二联系人-->
+		<property name="region" type="string" column="region"/><!--籍贯-->
+		<!-- 拟发展 -->
+		<property name="honor" type="string" column="honor"/><!--受表彰情况-->
+		<property name="train" type="string" column="train"/><!--发展对象培训情况-->
+		<!-- 发展 -->
+		<property name="passDate" type="string" column="passDate"/><!--支部通过时间-->
+		<property name="approveDate" type="string" column="approveDate"/><!--分党委审批时间-->
+		<property name="volunteer" type="string" column="volunteer"/><!--志愿书编号-->	
+		<!-- 转正 -->
+		<property name="prepTrain" type="string" column="prepTrain"/><!--预备党员培训情况-->
+		<property name="normalDate" type="string" column="normalDate"/><!--转正时间-->
+		<property name="discuss" type="string" column="discuss"/><!--讨论意见-->
+		<property name="normalApproveDate" type="string" column="normalApproveDate"/><!--分党委审批时间-->				
+	</class>
+</hibernate-mapping>

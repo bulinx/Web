@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xgdj.po.UserState" table="tb_xg_state">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="numbers" type="string" column="numbers"/><!--学号-->
+		<property name="apply" type="java.lang.Integer" column="apply"/><!--入党申请(0-为通过，1-通过)-->
+		<property name="positive" type="java.lang.Integer" column="positive"/><!--积极分子申请(0-未通过，1-提交审核，2-通过)-->
+		<property name="develop" type="java.lang.Integer" column="develop"/><!--拟发展申请(0-未通过，1-提交审核，2-通过)-->
+		<property name="prepare" type="java.lang.Integer" column="prepare"/><!--发展申请(0-未通过，1-提交审核，2-通过)-->
+		<property name="normal" type="java.lang.Integer" column="normal"/><!--转正申请(0-未通过，1-提交审核，2-通过)-->
+		<property name="state" type="java.lang.Integer" column="state"/><!--用户状态（0-有效，1-无效）-->
+	</class>
+</hibernate-mapping>

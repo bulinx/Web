@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20140501" releaseVersion="7.1.0">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC1]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT
+	`name`,
+	sex,
+	company,
+	nation,
+	DATE_FORMAT(birthday, '%Y%m%d') AS birthday,
+	idCard,
+	DATE_FORMAT(passDate, '%Y%m%d') AS passDate,
+	CONCAT(linkMan1, ',', linkMan2) AS linkMan1,
+	prepTrain,
+	DATE_FORMAT(normalDate, '%Y%m%d') AS normalDate,
+	discuss,
+	DATE_FORMAT(normalApproveDate, '%Y%m%d') AS normalApproveDate
+FROM
+	tb_xg_apply
+WHERE
+	number IN (
+		SELECT
+			numbers
+		FROM
+			tb_xg_state
+		WHERE
+			normal = 1
+	)]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC1]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT CONCAT('本党委（党总支）所辖党支部，已确定',`name`,'等',(SELECT COUNT(id) FROM tb_xg_state WHERE normal = 1),' 名同志转为中共正式党员。') AS tip 
+FROM tb_xg_apply 
+WHERE number = (SELECT numbers FROM tb_xg_state WHERE normal = 1 limit 1)]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[3276600,1562100,1333500,1943100,1143000,1257300,1790700,1219200,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[1257300,2362200,1828800,2743200,2743200,2743200,5029200,2743200,3390900,2743200,2743200,3314700,2743200,2209800,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="14" s="0">
+<O>
+<![CDATA[湖北民族大学党员转正情况备案表]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" cs="13" s="1">
+<O>
+<![CDATA[湖北民族大学党委组织部：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="2" cs="13" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="tip"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="3" s="3">
+<O>
+<![CDATA[序号]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="3" s="3">
+<O>
+<![CDATA[姓名]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="3" s="3">
+<O>
+<![CDATA[性别]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="3" s="3">
+<O>
+<![CDATA[单位]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="3" s="3">
+<O>
+<![CDATA[民族]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="3" s="3">
+<O>
+<![CDATA[出生年月]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="3" s="3">
+<O>
+<![CDATA[身份证号码]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="3" s="3">
+<O>
+<![CDATA[入党时间]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="3" s="3">
+<O>
+<![CDATA[入党介绍人]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="3" s="3">
+<O>
+<![CDATA[预备党员培训情况]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="3" s="3">
+<O>
+<![CDATA[转正时间]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="3" s="3">
+<O>
+<![CDATA[讨论意见]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="3" s="3">
+<O>
+<![CDATA[分党委审批时间]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="3" s="3">
+<O>
+<![CDATA[备注]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="4" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SEQ()]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="name"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="sex"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="company"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="4" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="nation"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="birthday"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="idCard"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="passDate"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="linkMan1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="9" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="prepTrain"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="10" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="normalDate"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="11" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="discuss"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="12" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="normalApproveDate"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="13" r="4" s="4">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="5" cs="14" s="5">
+<O>
+<![CDATA[备注：1.单位：是指学生所在班级;教职工是所在单位；2.出生时间、入党时间请用20160101格式。]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="6" cs="14" s="6">
+<O>
+<![CDATA[分党委（党总支）书记签名或盖章：           填表人（分党委（党总支）组织委员）： ]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="7" cs="14" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=CONCATENATE(YEAR(),'年',MONTH(),'月',DAY(),'日')]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting orientation="1">
+<Margin top="986400" left="1447200" bottom="986400" right="1447200"/>
+</PaperSetting>
+</ReportSettings>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="1" size="192"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="1" size="112" underline="1"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="1" size="96"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="1" size="96"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="96"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="1" size="112"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4" imageLayout="1">
+<FRFont name="SimSun" style="1" size="112"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="HBA"/>
+<PreviewType PreviewType="0"/>
+</WorkBook>

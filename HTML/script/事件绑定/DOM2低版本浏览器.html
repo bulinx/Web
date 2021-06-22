@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>高版本浏览器</title>
+</head>
+<body>
+    <button>按钮</button>
+
+    <script type="text/javascript">
+    
+    var btn = document.getElementsByTagName('button')[0];
+
+            btn.attachEvent('onclick', function() {
+                console.log('事件1');
+            });
+
+            btn.attachEvent('onclick', function() {
+                console.log('事件2');
+            });
+	</script>
+</body>
+</html>

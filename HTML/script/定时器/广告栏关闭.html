@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>  </title>
+    <!-- 假设网页两侧的广告栏为两个img标签 -->
+    <style>
+        #img {
+
+        }
+        
+    </style>
+</head>
+<body>
+	<script type="text/javascript">
+		// 在这里写 js 代码
+        //laosanbu
+        // window.onload 方法用于在网页加载完毕后立刻执行的操作，
+        //即当HTML 文档加载完毕后，立刻执行某个方法。 window.onload() 通常用于<body> 元素
+        window.onload= function(){
+            var arrimg = document.getElementsByTagName("img");
+
+            setTimeout(fn,5000 );
+
+            function fn(){
+                arrimg[0].style.display = "none";
+                arrimg[0].style.display = "none";
+            }
+        }
+	</script>
+</body>
+</html>

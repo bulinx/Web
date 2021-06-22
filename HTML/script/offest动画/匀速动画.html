@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    
+    <head leng = "en">
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: black;
+                /* 绝对定位的元素的位置相对于
+                最近的已定位父元素，如果元素没有已定位的父元素，
+                那么它的位置相对于<html>:
+                    absolute 定位使元素的位置与文档流无关，因此不占据空间。
+                   absolute 定位的元素和其他元素重叠。
+                 */
+                position:absolute ; 
+            }
+        </style>
+    </head>
+<body>
+    <button>carton</button>
+    <div class="box" style="left: 0px"></div>
+
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+        var div = document.getElementsByTagName("div")[0];
+
+    //1、闪动
+        btn.onclick = function () {
+            div.style.left = "500px";
+   }
+
+        //2、yunsu
+
+   // btn.onclick = function(){
+            //定时器，每隔一定的时间向右走一些
+    //    setInterval(function() {
+    //        console.log(parseInt(div.style.left));
+            //动画原理： 盒子未来的位置 = 盒子现在的位置 + 步长；
+            //方法1：用offsetLeft获取值，用style.left赋值。
+    //        div.style.left = div.offsetLeft + 100 + 'px';
+
+            // 方法2：必须一开始就在DOM节点上添加 style="left: 0px;"属性，才能用方法2。
+            //否则， div.style.left 的值为 NaN
+            // div.style.left = parseInt(div.style.left)+100+"px";  //方法2：
+
+
+   //     },500);
+  //  }
+    </script>
+</body>
+</html>

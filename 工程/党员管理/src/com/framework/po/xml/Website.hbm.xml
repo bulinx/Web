@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.framework.po.Website" table="tb_website">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name" type="string" column="name"/>
+		<property name="keywords" type="string" column="keywords"/>
+		<property name="description" type="string" column="description"/>
+		<property name="statics" type="string" column="statics"/>
+		<property name="uploadfile" type="string" column="uploadfile"/>
+		<property name="copyright" type="string" column="copyright"/>
+		<property name="icp" type="string" column="icp"/>
+		<property name="flag" type="java.lang.Byte" column="flag"/>
+	</class>
+</hibernate-mapping>

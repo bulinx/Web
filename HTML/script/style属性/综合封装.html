@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head lang = "en">
+       <meta charset="UTF-8">
+       <title></title>
+       <style>
+           div {
+               background-color: pink; 
+               /* 自身边框到自身内部另一个容器边框之间的距离，就是容器内距离 */
+               padding: 10px;
+
+           }
+       </style>
+    </head>
+    <body>
+
+        <div style="width: 100px;height: 100px;"></div>
+
+        <script>
+            var div1 = document.getElementsByTagName("div")[0];
+
+            console.log(getStyle(div1, "width"));
+            console.log(getStyle(div1, "padding"));
+            console.log(getStyle(div1, "background-color"));
+
+            function getStyle(ele, attr) {
+                return window.getComputedStyle(ele, null)[attr];
+            }
+            return ele.currentStyle[attr];
+
+        </script>
+    </body>
+
+</html>

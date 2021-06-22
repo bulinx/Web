@@ -1,0 +1,25 @@
+<!-- //参数为true，代表事件在「捕获」阶段触发；参数为false或者不写参数，代表事件在「冒泡」阶段触发 -->
+
+window.addEventListener("click", function () {
+    alert("捕获 window");
+}, true);
+
+document.addEventListener("click", function () {
+    alert("捕获 document");
+}, true);
+
+document.documentElement.addEventListener("click", function () {
+    alert("捕获 html");
+}, true);
+
+document.body.addEventListener("click", function () {
+    alert("捕获 body");
+}, true);
+
+fatherBox.addEventListener("click", function () {
+    alert("捕获 father");
+}, true);
+
+childBox.addEventListener("click", function () {
+    alert("捕获 child");
+}, true);

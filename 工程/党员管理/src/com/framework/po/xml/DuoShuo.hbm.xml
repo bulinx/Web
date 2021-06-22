@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.framework.duoshuo.DuoShuo" table="tb_comment">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="flag" type="java.lang.Byte" column="flag"/>
+		<property name="log_id" type="long" column="log_id"/>
+		<property name="user_id" type="string" column="user_id"/>
+		<property name="action" type="string" column="action"/>
+		<property name="date" type="java.sql.Timestamp" column="date"/>
+		<property name="post_id" type="long" column="post_id"/>
+		<property name="thread_id" type="long" column="thread_id"/>
+		<property name="author_id" type="string" column="author_id"/>
+		<property name="thread_key" type="string" column="thread_key"/>
+		<property name="author_name" type="string" column="author_name"/>
+		<property name="author_email" type="string" column="author_email"/>
+		<property name="author_url" type="string" column="author_url"/>
+		<property name="author_key" type="string" column="author_key"/>
+		<property name="ip" type="string" column="ip"/>
+		<property name="created_at" type="string" column="created_at"/>
+		<property name="message" type="string" column="message"/>
+		<property name="status" type="string" column="status"/>
+		<property name="parent_id" type="string" column="parent_id"/>
+		<property name="type" type="string" column="type"/>
+	</class>
+</hibernate-mapping>

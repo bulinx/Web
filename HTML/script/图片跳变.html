@@ -1,0 +1,59 @@
+<!--<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>PICTURE</title>
+        <script>
+            window.onload = location(){
+                var img = document.getElementById("box");
+                img.onmouseover = function(){
+                    img.src = "../../images/3.jpg";
+                }
+                img.onmouseout = function(){
+                    img.src = "../../images/9.jpg";
+                }
+            }
+        </script>
+    </head>
+    <body>
+
+        <img id="box" src="../../images/9.jpg" style="cursor: pointer;border: 1px solid #ccc;"/>
+    </body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //window.onload页面加载完毕以后再执行此代码
+        window.onload = function () {
+            //需求：鼠标放到img上，更换为另一张图片，也就是修改路径（src的值）。
+            //步骤：
+            //1.获取事件源
+            //2.绑定事件
+            //3.书写事件驱动程序
+
+            //1.获取事件源
+            var img = document.getElementById("box");
+            //2.绑定事件(悬停事件：鼠标进入到事件源中，立即触发事件)
+            img.onmouseover = function () {
+                //3.书写事件驱动程序(修改src)
+                img.src = "../../images/3.jpg";
+//                this.src = "image/jd2.png";
+            }
+
+            //2.绑定事件(悬停事件：鼠标进入到事件源中，立即触发事件)
+            img.onmouseout = function () {
+                //3.书写事件驱动程序(修改src)
+                img.src = "../../images/9.jpg";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<img id="box" src="../../images/3.jpg" style="cursor: pointer;border: 1px solid #ccc;"/>
+
+</html>

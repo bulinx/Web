@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+	<!-- 初始化网站信息 -->
+	<listener>
+		<listener-class>com.framework.interceptor.InitWebsiteListener</listener-class>
+	</listener>
+	<!-- 初始化网站信息 -->
+	<!-- 自定义struts2拦截器 -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>com.framework.filter.UeditorFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 自定义struts2拦截器 -->
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	<!-- PageOffice Begin -->
+	<!-- <servlet>
+		<servlet-name>poserver</servlet-name>
+		<servlet-class>com.zhuozhengsoft.pageoffice.poserver.Server</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>poserver</servlet-name>
+		<url-pattern>/poserver.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>poserver</servlet-name>
+		<url-pattern>/poserver.zz</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>poserver</servlet-name>
+		<url-pattern>/posetup.exe</url-pattern>
+	</servlet-mapping>
+	<mime-mapping>
+		<extension>mht</extension>
+		<mime-type>message/rfc822</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+  		<extension>msi</extension>
+  		<mime-type>application/x-msi</mime-type>
+  	</mime-mapping> -->
+  	<!-- PageOffice End -->
+  	<!-- 帆软报表 -->
+  	<servlet>
+		<servlet-name>ReportServer</servlet-name>
+		<servlet-class>com.fr.web.ReportServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReportServer</servlet-name>
+		<url-pattern>/ReportServer</url-pattern>
+	</servlet-mapping>
+	<!-- 帆软报表 -->
+</web-app>

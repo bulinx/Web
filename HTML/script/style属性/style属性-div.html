@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title>lable/text\property</title>
+    </head>
+    <body>
+        <div id="box1" value="111">
+            生命壹号
+        </div>
+        <div style="width: 100px;height: 100px;background-color: pink;"></div>
+
+        <script>
+             var div = document.getElementsByTagName("div")[0];
+             div.onmouseover = function(){// 事件会在鼠标指针移动到指定的对象上时发生
+                 div.style.width = "200px";
+                 div.style.height = "200px";
+                 div.style.backgroundColor = "black";
+                 div.style.opacity = "0.2";   //设置背景色的透明度。单位是0.1
+                 div.style.filter = "alpha(opacity=20)";   //上一行代码的兼容性写法。注意单位是百进
+
+             }    
+        </script>
+
+        
+    </body>
+</html>

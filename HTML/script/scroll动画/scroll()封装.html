@@ -1,0 +1,36 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            height: 6000px;
+            width: 5000px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+
+    //需求：封装一个兼容的scroll().返回的是对象，用scroll().top获取scrollTop
+    //，用scroll().left获取scrollLeft
+    window.onscroll = function () {
+//        var myScroll = scroll();
+//        myScroll.top;
+        console.log(scroll().top);
+        console.log(scroll().left);
+    }
+
+    //函数封装（简单封装，实际工作使用）
+    function scroll() {
+        return { //此函数的返回值是对象
+        //document.body 文档的body标签
+        //document.documentElement表示文档的html标签
+            left: window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop,
+            right: window.pageXOffset || document.body.scrollLeft || document.documentElement.scrollLeft
+        }
+    }
+</script>
+</body>
+</html>

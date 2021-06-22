@@ -1,0 +1,20 @@
+<html>
+ <head>
+  <title></title>
+	<script type="text/JavaScript">
+    var secs = 3; //倒计时的秒数 
+    for(var i=secs;i>=0;i--) 
+    { 
+       window.setTimeout("doUpdate(" + i + ")", (secs-i) * 1000); 
+    } 
+    function doUpdate(num) 
+    { 
+       document.getElementById("pj").innerHTML = num ; 
+       if (num == 0){window.location='${OriginalUrl}'}
+    }
+    </script>
+ </head>
+ <body>
+ <p>将在<b id="pj"></b>秒后跳转到<a href="${OriginalUrl}">点击这里马上跳转</a><p>
+ </body>
+</html>

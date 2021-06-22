@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<project name="fine-antlr" default="build-grammer" basedir="../../../../../../..">
+    <target name="build-grammer">
+		<java classname="com.fr.third.antlr.Tool" fork="true" failonerror="true" maxmemory="128m" args="-o ./base/src/com/fr/parser">
+			<arg value="./engine/src/com/fr/report/core/cal/fr.g" />
+			<classpath>
+				<pathelement location="./lib/3rd.jar" />
+			</classpath>
+		</java>
+	</target>
+</project>

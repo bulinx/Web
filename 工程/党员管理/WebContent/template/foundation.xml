@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<excel id="student" code="student" name="template">
+	<colgroup>
+		<col index="A" width='27em'></col>
+	</colgroup>
+	<title>
+		<tr height="16px">
+			<td rowspan="1" colspan="1" value="基础数据-导入模板" />
+		</tr>
+	</title>
+	<thead>
+		<tr height="16px">
+			<th value="学号"/>
+		</tr>
+	</thead>
+	<tbody>
+		<tr height="16px" firstrow="2" firstcol="0" repeat="0">
+			<td type="string" isnullable="false" /><!--学号 -->
+		</tr>
+	</tbody>
+</excel>

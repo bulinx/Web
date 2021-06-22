@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title>lable/text\property</title>
+    </head>
+    <body>
+        <div id="box1" value="111">
+            生命壹号
+        </div>
+
+        <script>
+    var element = document.getElementById("box1");  //获取元素节点（标签）
+    var attribute = element.getAttributeNode("id"); //获取box1的属性节点
+    var txt = element.firstChild;                   //获取box1的文本节点
+
+    //获取nodeType
+    console.log(element.nodeType);       //1
+    console.log(attribute.nodeType);     //2
+    console.log(txt.nodeType);           //3
+
+    console.log("--------------");
+
+    //获取nodeName
+    console.log(element.nodeName);       //DIV
+    console.log(attribute.nodeName);     //id
+    console.log(txt.nodeName);           //#text
+
+    console.log("--------------");
+
+    //获取nodeValue
+    console.log(element.nodeValue);     //null
+    console.log(attribute.nodeValue);   //box1
+    console.log(txt.nodeValue);         //生命壹号
+        </script>
+
+
+        
+    </body>
+</html>

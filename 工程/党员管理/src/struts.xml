@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<!-- 支持动态调用 -->
+	<constant name ="struts.enable.DynamicMethodInvocation" value= "true" />
+	<!--配置struts的xml文件重载-->
+	<constant name="struts.configuration.xml.reload " value="true" />
+	<!-- 配置应用的编码方式 -->  
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+	
+	<!-- 管理 配置文件 -->
+	<include file="com/framework/resources/global_struts.xml"/>
+	<include file="com/framework/resources/manager_struts.xml"/>
+	<!-- 自定义功能配置文件 -->
+	<include file="com/xgdj/resources/xgdj_struts.xml"/>
+</struts>

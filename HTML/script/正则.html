@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel = "stylesheet" type = "text/css" href = "../CSS/a.css"></link>
+        <title>drop</title>
+    </head>
+
+    <body>
+        <script>
+            var reg = new RegExp("g"); //gouzaohanshu
+
+            var str1 = "gmm";
+            var str2 = "02003";
+
+            console.log(reg.test(str1));
+            console.log(reg.test(str2));          
+
+            var reg = /[^ab]/;
+            var str = "abs";
+
+            console.log(reg.test(str));
+
+            var reg = /[^0-9]/;
+            var str3 = "1991f";
+
+            console.log(reg.test(str3));
+
+            var str = "1a2b3c4d5e6f7g";
+            var result = str.split(/[A-z]/);
+            
+            console.log(result);
+
+
+        </script>
+    </body>
+</html>

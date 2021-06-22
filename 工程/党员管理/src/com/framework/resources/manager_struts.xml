@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="base" extends="struts-default" namespace="/">
+		<!-- 配置拦截器 -->
+		<interceptors>
+			<!-- 权限检查拦截器 -->
+			<interceptor name="userInterceptor" class="com.framework.interceptor.UserInterceptor">
+			</interceptor>
+			<!-- 包含权限检查的拦截器栈 -->
+			<interceptor-stack name="defaultInterceptorStack">
+				<!-- 默认 -->
+				<interceptor-ref name="defaultStack" />
+				<!-- 自定义 -->
+				<interceptor-ref name="userInterceptor">
+					<param name="excludeActions">login</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 默认拦截器 -->
+		<default-interceptor-ref name="defaultInterceptorStack" />
+		<!-- 全局结果 -->
+		<global-results>
+			<result name="error">404.jsp</result>
+			<result name="login">login.jsp</result>
+		</global-results>
+
+		<!-- 登录 -->
+		<action name="login" class="com.framework.action.LoginAction">
+			<result name="success">pages/manager/index.jsp</result>
+		</action>
+		<!-- 网站基本信息 -->
+		<action name="website" class="com.framework.action.WebsiteAction">
+		</action>
+		<!-- 登录日志 -->
+		<action name="log" class="com.framework.action.LogAction">
+			<result name="success">pages/manager/log-login-list.jsp</result>
+			<result name="search">pages/manager/log-login-search-list.jsp</result>
+		</action>
+		<!-- 访问记录-->
+		<action name="views" class="com.framework.action.ViewsAction">
+			<result name="success">pages/logs/log-view-list.jsp</result>
+			<result name="search">pages/logs/log-view-search-list.jsp</result>
+		</action>
+		<!-- 登录日志 -->
+		<action name="operate" class="com.framework.action.OperateAction">
+			<result name="success">pages/logs/log-operate-list.jsp</result>
+			<result name="search">pages/logs/log-operate-search-list.jsp</result>
+		</action>
+		<!-- 菜单管理-->
+		<action name="menu" class="com.framework.action.MenuAction">
+			<result name="success">pages/author/menu-list.jsp</result>
+			<result name="menuList">pages/author/menu-detail-list.jsp</result>
+			<result name="clickZtree">pages/author/menu-detail-list.jsp</result>
+			<result name="search">pages/author/menu-detail-search.jsp</result>
+		</action>
+		<!-- 系统用户管理 -->
+		<action name="users" class="com.framework.action.UserAction">
+			<result name="success">pages/user/user-system-list.jsp</result>
+			<result name="search">pages/user/user-system-search-list.jsp</result>
+		</action>
+		<!-- 权限分配,角色分配-->
+		<action name="role" class="com.framework.action.RoleAction">
+			<result name="success">pages/author/role-list.jsp</result>
+			<result name="getMenus">pages/author/role-add.jsp</result>
+			<result name="beforeEditRole">pages/author/role-edit.jsp</result>
+			<result name="searchUser">pages/author/role-user-list.jsp</result>
+		</action>
+		<!-- 系统文档 -->
+		<action name="info" class="com.framework.action.InfomationAction">
+			<result name="success">pages/manager/info-list.jsp</result>
+			<result name="save" type="redirect">info</result>
+			<result name="view">pages/manager/info-view.jsp</result>
+			<result name="goView">pages/manager/info-edit.jsp</result>
+		</action>
+		<!-- 系统用户管理 -->
+		<action name="chart" class="com.framework.action.ChartAction">
+		</action>
+		<!-- 按钮权限 -->
+		<action name="button" class="com.framework.action.ButtonAction">
+			<result name="success">pages/button/button-list.jsp</result>
+			<result name="editButtonRole">pages/button/button-role.jsp</result>
+		</action>
+		<!-- 数据字典 -->
+		<action name="dictionary" class="com.framework.action.DictionaryAction">
+			<result name="success">pages/manager/system-data.jsp</result>
+			<result name="getText">pages/manager/system-data-detail-list.jsp</result>
+			<result name="searchText">pages/manager/system-detail-search-list.jsp</result>
+			<result name="searchDic">pages/manager/system-data-search.jsp</result>
+		</action>
+		<!-- 获取数据字典值 -->
+		<action name="dictionarys" class="com.framework.action.DictionarysAction">
+		</action>
+	</package>
+</struts>

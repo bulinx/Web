@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>高版本浏览器</title>
+</head>
+<body>
+    <button>按钮</button>
+
+    <script type="text/javascript">
+    
+    var btn = document.getElementsByName("button")[0];
+    // addEventListener: 事件监听器。 原事件被执行的时候，后面绑定的事件照样被执行
+    // 这种写法不存在响应函数被覆盖的情况。（更适合团队开发）
+    btn.addEventListener("click", fn1);
+    btn.addEventListener("click", fn2);
+
+    function fn1() {
+        console.log("事件1");
+    }
+
+    function fn2() {
+        console.log("事件2");
+    }
+	</script>
+</body>
+</html>

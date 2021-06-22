@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20140501" releaseVersion="7.1.0">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC1]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM tb_xg_apply WHERE number IN (SELECT numbers FROM tb_xg_state WHERE positive = 1)]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[2971800,2160000,2160000,2160000,2160000,2160000,2160000,2160000,6934200,6972300,3467100,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[0,0,3848100,2743200,1676400,2743200,2743200,2247900,2743200,2743200,2514600,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" rs="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SEQ()]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr invisible="true">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="1" r="0" rs="18">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="Id"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="0" cs="9" s="0">
+<O>
+<![CDATA[湖北民族大学入党积极分子公示情况登记表]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="1" s="1">
+<O>
+<![CDATA[姓 名]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="1" cs="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="name"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="1" s="1">
+<O>
+<![CDATA[性 别]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="1" cs="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="sex"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="1" s="1">
+<O>
+<![CDATA[民 族]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="1" cs="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="nation"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="2" s="1">
+<O>
+<![CDATA[出生年月]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="2" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="birthday"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="2" cs="2" s="1">
+<O>
+<![CDATA[籍  贯]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="2" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="region"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="3" s="1">
+<O>
+<![CDATA[学  历]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="3" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="culture"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="3" cs="2" s="1">
+<O>
+<![CDATA[学位或职称]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="3" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="degree"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="4" cs="2" s="1">
+<O>
+<![CDATA[单位、职务或职业]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="4" cs="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="duty"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="5" cs="2" s="1">
+<O>
+<![CDATA[居民身份证号码]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="5" cs="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="idCard"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="6" cs="2" s="1">
+<O>
+<![CDATA[申请入党时间]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="6" cs="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="partyDate"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="6" cs="2" s="1">
+<O>
+<![CDATA[列为积极分子时间]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="6" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="positiveDate"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="7" cs="2" s="1">
+<O>
+<![CDATA[公示起止时间]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="7" cs="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="positivePublic"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="8" s="1">
+<O>
+<![CDATA[群众反映的意见及建议]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="8" cs="8" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="9" s="1">
+<O>
+<![CDATA[党支部意见]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="9" cs="8" s="3">
+<O>
+<![CDATA[（盖章）    年   月   日]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="10" s="1">
+<O>
+<![CDATA[备注]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="10" cs="8" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<Report class="com.fr.report.poly.PolyWorkSheet" name="sheet2">
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="1" size="144"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="96"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="96"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4" vertical_alignment="3" imageLayout="1" paddingRight="27" spacingAfter="20">
+<FRFont name="SimSun" style="0" size="96"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="HBA"/>
+<PreviewType PreviewType="0"/>
+</WorkBook>

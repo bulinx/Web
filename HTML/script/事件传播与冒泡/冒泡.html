@@ -1,0 +1,16 @@
+//事件冒泡
+box3.onclick = function () {
+    alert("child");
+}
+
+box2.onclick = function () {
+    alert("father");
+}
+
+box1.onclick = function () {
+    alert("grandfather");
+}
+
+document.onclick = function () {
+    alert("body");
+}

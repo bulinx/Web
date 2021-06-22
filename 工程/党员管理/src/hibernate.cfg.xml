@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+        <!--连接池中保留的最大连接数。默认值: 15 -->
+        <property name="hibernate.c3p0.max_size">20</property>
+        <!-- 连接池中保留的最小连接数，默认为：3--> 
+        <property name="hibernate.c3p0.min_size">2</property>
+        <!-- 初始化连接池中的连接数，取值应在minPoolSize与maxPoolSize之间，默认为3-->  
+        <property name="initialPoolSize">5</property> 
+        <!--最大空闲时间，60秒内未使用则连接被丢弃。若为0则永不丢弃。默认值: 0 -->   
+        <property name="maxIdleTime">300</property>
+        <!-- 当连接池连接耗尽时，客户端调用getConnection()后等待获取新连接的时间，超时后将抛出SQLException，如设为0则无限期等待。单位毫秒。默认: 0 -->   
+        <property name="checkoutTimeout">3000</property>
+        <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。默认值: 3 -->   
+        <property name="acquireIncrement">5</property>
+        <!--每60秒检查所有连接池中的空闲连接。默认值: 0，不检查 -->   
+        <property name="idleConnectionTestPeriod">60</property> 
+        <!--c3p0全局的PreparedStatements缓存的大小。如果maxStatements与maxStatementsPerConnection均为0，则缓存不生效，只要有一个不为0，则语句的缓存就能生效。如果默认值: 0-->   
+        <property name="maxStatements">100</property>  
+        <!--maxStatementsPerConnection定义了连接池内单个连接所拥有的最大缓存statements数。默认值: 0 -->   
+        <property name="maxStatementsPerConnection">5</property>
+        <property name="show_sql">false</property>
+        
+        <!-- 解决数据库连接超时问题8小时 c3p0连接配置-->
+        
+        <!--定义在从数据库获取新连接失败后重复尝试的次数。默认值: 30 ；小于等于0表示无限次-->
+        <property name="acquireRetryAttempts">0</property>
+        <!--重新尝试的时间间隔，默认为：1000毫秒-->   
+        <property name="acquireRetryDelay">1000</property>
+        <!-- 解决数据库连接超时问题8小时 -->
+        
+        <!-- 数据库驱动 -->
+        <property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<!-- 数据库方言 -->
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+	
+		<property name="connection.url">
+			jdbc:mysql://123.207.15.143:3306/xgdj<!-- 123.207.245.192数据库连接URL -->
+		</property>
+		<property name="connection.username">
+			root								<!-- 数据库用户名 -->
+		</property>
+		<property name="connection.password">
+			sjdhduwEURSLDI082635  <!-- jhdeodmdkDJEUS82763510数据库密码 -->
+		</property>
+		
+		<!-- 系统映射文件 -->
+		<mapping resource="com/framework/po/xml/Website.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/OperateLog.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/Log.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/User.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/Views.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/Menu.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/Role.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/RoleMenu.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/Infomation.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/CLog.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/CViews.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/Button.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/ButtonMenu.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/Dictionary.hbm.xml"/>
+		<mapping resource="com/framework/po/xml/DictionaryText.hbm.xml"/>
+		<!-- 系统映射文件 -->
+		<!-- 自定义映射文件 -->
+		<mapping resource="com/xgdj/xml/PartyData.hbm.xml"/>
+		<mapping resource="com/xgdj/xml/UserState.hbm.xml"/>
+		<mapping resource="com/xgdj/xml/Message.hbm.xml"/>
+		<mapping resource="com/xgdj/xml/MsgRelation.hbm.xml"/>
+		<mapping resource="com/xgdj/xml/Process.hbm.xml"/>
+		<mapping resource="com/xgdj/xml/Report.hbm.xml"/>
+		<!-- 自定义映射文件 -->
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xgdj.po.Message" table="tb_xg_message">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id> 
+		<property name="title" type="string" column="title"/><!--标题-->
+		<property name="sendMan" type="string" column="sendMan"/><!--发送人-->
+		<property name="sendTime" type="java.sql.Timestamp" column="sendTime"/><!--发送时间-->
+		<property name="content" type="string" column="content"/><!--内容-->
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xgdj.po.MsgRelation" table="tb_xg_msg">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native"></generator>
+		</id> 
+		<property name="recvMan" type="java.lang.Integer" column="recvMan"/><!--接收人-->
+		<property name="recvTime" type="java.sql.Timestamp" column="recvTime"/><!--接受时间-->
+		<property name="state" type="java.lang.Integer" column="state"/><!--阅读状态（0-未读，1-已读）-->
+		<property name="msgId" type="java.lang.Integer" column="msgId"/><!--消息ID-->
+	</class>
+</hibernate-mapping>
