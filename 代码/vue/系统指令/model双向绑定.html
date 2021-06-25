@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+
+    <form action="#">
+        <!-- 将 input 标签中的value值双向绑定到 Vue实例中的data。注意，v-model 后面不需要跟冒号 -->
+        <input type="text" id="username" v-model="myAccount.username">
+        <input type="password" id="pwd" v-model="myAccount.userpwd">
+
+        <input type="submit" v-on:click="submit1" value="注册">
+
+    </form>
+</div>
+</body>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        //上面的标签中采用v-model进行双向数据绑定，数据会自动更新到data里面来
+        data: {
+            name: 'smyhvae',
+            myAccount: {username: '', userpwd: ''}
+        },
+        //在methods里绑定各种方法，根据业务需要进行操作
+        methods: {
+            submit1: function () {
+                alert(this.myAccount.username + "  pwd=" + this.myAccount.userpwd);
+            }
+        }
+    });
+</script>
+
+</html>

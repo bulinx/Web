@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--1、导入Vue的包-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+<!--这个div区域就是MVVM中的 View-->
+<div id="div1">
+    {{name}}
+</div>
+</body>
+
+<script>
+    // 2、创建一个Vue的实例
+    //new出来的对象就是MVVM中的 View Module（调度者）
+    var myVue = new Vue({
+        el: '#div1', //当前vue对象将接管上面的div1区域
+        data: {//data就是MVVM中的 module
+            name: 'smyhvae'
+        }
+    });
+</script>
+</html>

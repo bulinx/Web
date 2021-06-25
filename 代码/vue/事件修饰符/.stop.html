@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>tired</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        <style>
+            .father {
+            height: 300px;
+            width: 300px;
+            background: pink;
+            }
+
+            .child {
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+        </style>
+
+    </head>
+
+    <body>
+        <!--这个div区域就是MVVM中的 View-->
+        <div id="app">
+            <div class="father" @click="fatherClick">
+                <div class="child" @click.stop="childClick">
+                    <!-- because the symple child have been inclouded by symple father,so we need use .stop to stop the pop be happened -->
+                </div>
+            </div>
+        </div>
+        <script>
+             // 2、创建一个Vue的实例
+            //new出来的对象就是MVVM中的 View Module（调度者）
+            var vm = new vue({
+                el:'#app',//当前vue对象将接管上面的div1区域
+                data: {},//data就是MVVM中的 module
+                methods:{    //这个 methods 属性中定义了当前Vue实例所有可用的方法
+
+                    fatherClick: function () {
+                    console.log('father 被点击了');
+                },
+                childClick: function () {
+                    console.log('child 被点击了');
+                }
+                }
+
+
+            })
+        </script>
+    </body>
+</html>
