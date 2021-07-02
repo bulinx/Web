@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script src="../代码/thirdparty/vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <!-- vue的写法3：在数组中使用对象来代替三元表达式。-->
+            <h1 :class="[ {'my-active':flag} ]">我是smyhvae，生命壹号</h1>
+        </div>
+    
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    flag: true
+                }
+            });
+        </script>
+    </body>
+</html>
